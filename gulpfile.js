@@ -27,6 +27,7 @@ const browserSync = require("browser-sync");
 // ejs
 const ejs = require("gulp-ejs");
 const gulp = require("gulp");
+const replace = require("gulp-replace");
 
 //postcss-cssnext ブラウザ対応条件 prefix 自動付与
 const browsers = [
@@ -56,15 +57,16 @@ const destPath = {
 }
 
 //EJS(テンプレートエンジン)
-gulp.task("ejs", function(cb) {
+gulp.task("ejs", done => {
   gulp.src(
      ["src/ejs/**/*.ejs",'!' + "src/ejs/**/_*.ejs"] //参照するディレクトリ、出力を除外するファイル
   )
   .pipe(ejs())
-  .pipe(rename({extname: ".html"})) //拡張子をhtmlに
+    .pipe(rename({ extname: ".html" })) //拡張子をhtmlに
+    .pipe(replace({ extname: ".html" }))
     .pipe(gulp.dest("public/"))//出力先
 
-  cb();
+  done();
 });
 
 
