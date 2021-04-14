@@ -59,6 +59,89 @@ body {
   font-family: europa,"Yu Gothic",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.header__bg {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+}
+
+.header__logo a {
+  font-family: cursive;
+  display: block;
+  text-decoration: none;
+  font-size: 30px;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+.header__cat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__cat input,
+.header__cat label {
+  display: none;
+}
+
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__item span {
+  position: relative;
+}
+
+.header__item span::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: #FFFFFF;
+  opacity: 0;
+  -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.header__item:hover span:after {
+  opacity: 1;
+  left: 0;
+  width: 100%;
+}
+
+.header__navi a {
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+
 .u-hidden {
   display: none !important;
 }
