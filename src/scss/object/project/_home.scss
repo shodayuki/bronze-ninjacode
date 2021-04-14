@@ -18,3 +18,56 @@
     text-shadow: 10px 10px 5px $colorBlack;
   }
 }
+
+.concept {
+  &__cat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__img {
+    width: calc(50% - 40px);
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    width: calc(50% - 40px);
+    height: 630px;
+    overflow-y: auto;
+  }
+
+  &__sentence p {
+    margin-bottom: 16px;
+  }
+}
+
+.mainContent {
+  &__subTitle {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+
+    &::before,
+    &::after {
+      display: inline-block;
+      content: "";
+      vertical-align: 5px;
+      width: 32px;
+      height: 2px;
+      background-color: $colorBlack;
+    }
+
+    &::before {
+      margin-right: 8px;
+    }
+
+    &::after {
+      margin-left: 8px;
+    }
+  }
+}

@@ -59,6 +59,11 @@ body {
   font-family: europa,"Yu Gothic",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
 }
 
+.l-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -163,6 +168,60 @@ body {
   font-weight: bold;
   color: #FFFFFF;
   text-shadow: 10px 10px 5px #000;
+}
+
+.concept__cat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.concept__img {
+  width: calc(50% - 40px);
+}
+
+.concept__img > img {
+  width: 100%;
+}
+
+.concept__text {
+  width: calc(50% - 40px);
+  height: 630px;
+  overflow-y: auto;
+}
+
+.concept__sentence p {
+  margin-bottom: 16px;
+}
+
+.mainContent__subTitle {
+  text-align: center;
+  font-size: 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.mainContent__subTitle::before, .mainContent__subTitle::after {
+  display: inline-block;
+  content: "";
+  vertical-align: 5px;
+  width: 32px;
+  height: 2px;
+  background-color: #000;
+}
+
+.mainContent__subTitle::before {
+  margin-right: 8px;
+}
+
+.mainContent__subTitle::after {
+  margin-left: 8px;
 }
 
 .u-hidden {
