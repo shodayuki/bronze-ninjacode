@@ -6,7 +6,8 @@ $breakSP: 768;
 $breakPC: 1200;
 $breakpoints: (
   'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
-  'u-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
+  'u-pc': 'print, screen and (min-width: #{$breakSP + 1}px)',
+  'o-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
   'u-tb': 'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
 ) !default;
 @mixin mq($breakpoint) {
