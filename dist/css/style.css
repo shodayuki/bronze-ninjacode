@@ -349,6 +349,10 @@ body {
   font-size: 1.2rem;
 }
 
+.gallery {
+  margin-bottom: 60px;
+}
+
 .gallery__cat {
   background-image: url("../../dist/images/main_03.jpg");
   background-repeat: no-repeat;
@@ -384,6 +388,10 @@ body {
 
 .contact .mainContent__inner {
   padding: 0;
+}
+
+.card {
+  margin-bottom: 60px;
 }
 
 .card__wrap {
@@ -725,6 +733,12 @@ body {
   }
   .card__img > img {
     height: 500px;
+  }
+  .contact .mainContent__inner {
+    padding: 0 24px;
+  }
+  .contact__btn {
+    margin: 60px auto;
   }
   .u-hidden-sp {
     display: none !important;

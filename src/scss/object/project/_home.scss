@@ -228,6 +228,8 @@
 }
 
 .gallery {
+  margin-bottom: 60px;
+
   &__cat {
     background-image: url("#{$bgPath}main_03.jpg");
     background-repeat: no-repeat;
@@ -273,6 +275,8 @@
 }
 
 .card {
+  margin-bottom: 60px;
+
   &__wrap {
     display: flex;
     flex-wrap: wrap;
@@ -331,6 +335,12 @@
         height: 500px;
       }
     }
+  }
+}
+
+.contact .mainContent__inner {
+  @include mq(u-sp){
+    padding: 0 24px;
   }
 }
 
@@ -401,6 +411,10 @@
     transition: all 0.25s ease-in-out;
     font-size: 18px;
     font-weight: bold;
+
+    @include mq(u-sp){
+      margin: 60px auto;
+    }
 
     &:hover {
       color: $colorWhite;
