@@ -1,3 +1,5 @@
+@import "../foundation/var";
+
 /* resetCSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -51,6 +53,10 @@ table {
 
 html {
   font-size: 20px;
+
+  @include mq(u-sp){
+    font-size: 16px;
+  }
 }
 
 body {

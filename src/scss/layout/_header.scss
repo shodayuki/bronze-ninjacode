@@ -1,3 +1,5 @@
+@import "../foundation/var";
+
 .l-wrap {
   width: 100%;
   overflow: hidden;
@@ -15,6 +17,10 @@
     position: relative;
     z-index: 2;
     padding: 30px;
+
+    @include mq(u-sp){
+      padding: 10px;
+    }
   }
 
   &__logo {
@@ -24,6 +30,10 @@
       text-decoration: none;
       font-size: 1.5rem;
       color: $colorWhite;
+
+      @include mq(u-sp){
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -37,6 +47,24 @@
   &__cat input,
   &__cat label {
     display: none;
+
+    @include mq(u-sp){
+      display: block;
+    }
+  }
+
+  &__cat input {
+    @include mq(u-sp){
+      display: none;
+    }
+  }
+
+  &__cat label {
+    @include mq(u-sp){
+      position: absolute;
+      right: 10px;
+      clear: both;
+    }
   }
 
   &__list {
@@ -66,11 +94,142 @@
     width: 100%;
   }
 
+  &__navi {
+    @include mq(u-sp){
+      position: fixed;
+      opacity: 0;
+      background: rgba(255, 255, 255, 0.7);
+      top: 50px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(100%);
+      z-index: -1;
+      transition: all 1s ease-out;
+    }
+  }
+
+  &__navi__wrap {
+    @include mq(u-sp){
+      width: 100%;
+      background: $colorWhite;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transition-duration: 1s;
+      transition-property: right;
+      overflow-y: scroll;
+    }
+  }
+
+  &__navi__list {
+    display: flex;
+    @include mq(u-sp){
+      margin: 0;
+      display: block;
+      justify-content: inherit;
+    }
+  }
+
+  &__navi__item {
+    @include mq(u-sp){
+      border-bottom: 1px solid $colorBlack;
+    }
+
+    a {
+      @include mq(u-sp){
+        padding: 0 50px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: $colorBlack;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1;
+        transition: background-color 0.3s ease-in-out;
+      }
+    }
+  }
+
   &__navi a {
     text-decoration: none;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 1rem;
     color: $colorWhite;
+  }
+}
+
+.hamburger__icon {
+  @include mq(u-sp){
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+  }
+
+
+  i {
+    @include mq(u-sp){
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      display: block;
+      background: $colorWhite;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:nth-child(1){
+      top: 0;
+    }
+
+    &:nth-child(2){
+      margin: auto;
+      top: 0;
+      bottom: 0;
+    }
+
+    &:nth-child(3){
+      bottom: 0;
+    }
+  }
+}
+
+.header__cat input:checked + label span.hamburger__icon i:nth-child(1){
+  @include mq(u-sp){
+    margin: auto;
+    transform: rotate(45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.header__cat input:checked + label span.hamburger__icon i:nth-child(2){
+  @include mq(u-sp){
+    transform: rotateX(90deg);
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.header__cat input:checked + label span.hamburger__icon i:nth-child(3){
+  @include mq(u-sp){
+    margin: auto;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.header__cat input:checked ~ .header__navi {
+  @include mq(u-sp){
+    z-index: 99;
+    opacity: 1;
+    transform: translateX(0);
   }
 }
