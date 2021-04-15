@@ -227,6 +227,34 @@ body {
   margin-bottom: 16px;
 }
 
+.mainContent__inner {
+  max-width: 1080px;
+  margin: auto;
+  padding: 120px 0 0;
+}
+
+.mainContent__title {
+  margin-bottom: 60px;
+  font-family: fantasy;
+  position: relative;
+  font-size: 36px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mainContent__title::after {
+  content: "";
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  border-bottom: 2px solid;
+}
+
 .mainContent__subTitle {
   text-align: center;
   font-size: 24px;
@@ -629,6 +657,23 @@ body {
     width: 100%;
     text-align: center;
     font-size: 2.6rem;
+  }
+  .concept__cat {
+    display: block;
+  }
+  .concept__img {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .concept__text {
+    width: 100%;
+    height: 400px;
+  }
+  .mainContent__cat {
+    margin-bottom: 60px;
+  }
+  .mainContent__inner {
+    padding: 60px 24px 0;
   }
   .u-hidden-sp {
     display: none !important;
