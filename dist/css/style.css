@@ -704,6 +704,11 @@ body {
   .application__area .mainContent__subTitle {
     text-align: center;
   }
+  .gallery__container {
+    padding: 30px;
+    width: auto;
+    height: calc(100% - 60px);
+  }
   .u-hidden-sp {
     display: none !important;
   }

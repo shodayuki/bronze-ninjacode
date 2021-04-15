@@ -248,6 +248,12 @@
     padding: 70px 0;
     margin: auto;
     width: 70%;
+
+    @include mq(u-sp){
+      padding: 30px;
+      width: auto;
+      height: calc(100% - 60px);
+    }
   }
 
   &__sentence {
