@@ -277,6 +277,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    @include mq(u-sp){
+      padding: 0 24px;
+      display: block;
+    }
   }
 
   &__list {
@@ -284,18 +289,31 @@
     padding-right: 16px;
     margin-bottom: 60px;
 
+    @include mq(u-sp){
+      padding-right: 0;
+      width: 100%;
+    }
+
     &:nth-child(3n){
       padding-right: 0;
     }
 
     &:nth-child(n+4){
       margin-bottom: 0;
+
+      @include mq(u-sp){
+        margin-bottom: 48px;
+      }
     }
   }
 
   &__title {
     font-size: 1.1rem;
     margin-bottom: 16px;
+
+    @include mq(u-sp){
+      font-size: 1.3rem;
+    }
   }
 
   &__img {
@@ -308,6 +326,10 @@
       height: 600px;
       display: block;
       object-fit: cover;
+
+      @include mq(u-sp){
+        height: 500px;
+      }
     }
   }
 }

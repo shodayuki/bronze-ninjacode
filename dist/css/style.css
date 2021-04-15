@@ -709,6 +709,23 @@ body {
     width: auto;
     height: calc(100% - 60px);
   }
+  .card__wrap {
+    padding: 0 24px;
+    display: block;
+  }
+  .card__list {
+    padding-right: 0;
+    width: 100%;
+  }
+  .card__list:nth-child(n+4) {
+    margin-bottom: 48px;
+  }
+  .card__title {
+    font-size: 1.3rem;
+  }
+  .card__img > img {
+    height: 500px;
+  }
   .u-hidden-sp {
     display: none !important;
   }
