@@ -625,6 +625,11 @@ body {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
+  .mainKv__title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.6rem;
+  }
   .u-hidden-sp {
     display: none !important;
   }

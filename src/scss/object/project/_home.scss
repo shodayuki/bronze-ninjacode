@@ -19,6 +19,12 @@
     font-weight: bold;
     color: $colorWhite;
     text-shadow: 10px 10px 5px $colorBlack;
+
+    @include mq(u-sp){
+      width: 100%;
+      text-align: center;
+      font-size: 2.6rem;
+    }
   }
 }
 
