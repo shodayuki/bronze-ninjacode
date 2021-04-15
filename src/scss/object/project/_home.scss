@@ -422,3 +422,154 @@
     }
   }
 }
+
+.faq-inner {
+  margin: 0 auto 100px;
+  padding: 60px 90px;
+  background: rgba(194, 194, 208, 0.1);
+
+  @include mq(u-sp){
+    padding: 20px 30px;
+  }
+}
+
+.faq-checkbox {
+  display: none;
+}
+
+.faq-label {
+  padding: 24px;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  background: $colorWhite;
+  font-size: 16px;
+  box-shadow: 0 10px 55px rgba(0, 0, 0, 0.05);
+  position: relative;
+
+  @include mq(u-sp){
+    padding: 24px 36px 24px 24px;
+  }
+
+  &::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    background: url(#{$bgPath}faq_off.svg) no-repeat 50%;
+    background-size: contain;
+
+    @include mq(u-sp){
+      width: 18px;
+      height: 18px;
+      right: 16px;
+    }
+  }
+}
+
+.faq-checkbox:checked + .faq-label::after {
+  background: url(#{$bgPath}faq_on.svg) no-repeat 50%;
+  background-size: contain;
+}
+
+.faq-accordion {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: all 0.5s;
+}
+
+.faq-checkbox:checked + .faq-label + .faq-accordion {
+  max-height: 120px;
+  visibility: visible;
+
+  @include mq(u-sp){
+    max-height: 224px;
+  }
+}
+
+.faq-answer {
+  padding: 40px 24px 40px 3em;
+  color: $colorWhite;
+  background-color: rgba(37, 117, 252, 0.8);
+  font-size: 16px;
+  text-indent: -1em;
+}
+
+[data-modal="trigger"] {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 24px;
+  color: $colorModal;
+}
+
+[data-modal="trigger"]::after {
+  content: "忍者CODEを知る";
+}
+
+.modal-checkbox:checked ~ [data-modal="trigger"]::after {
+  content: "モーダルを閉じる";
+}
+
+.modal-checkbox:checked ~ [data-modal="trigger"] {
+  z-index: 1;
+  position: fixed;
+  bottom: 130px;
+
+  @include mq(u-sp){
+    bottom: 72px;
+  }
+}
+
+.faq-modal {
+  display: none;
+}
+
+.modal-checkbox:checked ~ .faq-modal {
+  display: block;
+}
+
+.faq-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.9);
+  }
+
+  &__content {
+    padding: 20px 30px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 400px;
+    background-color: $colorWhite;
+
+    @include mq(u-sp){
+      overflow-y: auto;
+    }
+  }
+
+  &__content__title {
+    padding: 16px 0 32px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.modal-checkbox {
+  display: none;
+}

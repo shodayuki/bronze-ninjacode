@@ -536,6 +536,135 @@ body {
   background: #555;
 }
 
+.faq-inner {
+  margin: 0 auto 100px;
+  padding: 60px 90px;
+  background: rgba(194, 194, 208, .1);
+}
+
+.faq-checkbox {
+  display: none;
+}
+
+.faq-label {
+  padding: 24px;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  background: #FFFFFF;
+  font-size: 16px;
+  -webkit-box-shadow: 0 10px 55px rgba(0, 0, 0, .05);
+          box-shadow: 0 10px 55px rgba(0, 0, 0, .05);
+  position: relative;
+}
+
+.faq-label::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../../dist/images/faq_off.svg) no-repeat 50%;
+  background-size: contain;
+}
+
+.faq-checkbox:checked + .faq-label::after {
+  background: url(../../dist/images/faq_on.svg) no-repeat 50%;
+  background-size: contain;
+}
+
+.faq-accordion {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.faq-checkbox:checked + .faq-label + .faq-accordion {
+  max-height: 120px;
+  visibility: visible;
+}
+
+.faq-answer {
+  padding: 40px 24px 40px 3em;
+  color: #FFFFFF;
+  background-color: rgba(37, 117, 252, .8);
+  font-size: 16px;
+  text-indent: -1em;
+}
+
+[data-modal="trigger"] {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 24px;
+  color: #108de8;
+}
+
+[data-modal="trigger"]::after {
+  content: "忍者CODEを知る";
+}
+
+.modal-checkbox:checked ~ [data-modal="trigger"]::after {
+  content: "モーダルを閉じる";
+}
+
+.modal-checkbox:checked ~ [data-modal="trigger"] {
+  z-index: 1;
+  position: fixed;
+  bottom: 130px;
+}
+
+.faq-modal {
+  display: none;
+}
+
+.modal-checkbox:checked ~ .faq-modal {
+  display: block;
+}
+
+.faq-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.faq-modal__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, .9);
+}
+
+.faq-modal__content {
+  padding: 20px 30px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70%;
+  height: 400px;
+  background-color: #FFFFFF;
+}
+
+.faq-modal__content__title {
+  padding: 16px 0 32px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal-checkbox {
+  display: none;
+}
+
 .u-hidden {
   display: none !important;
 }
@@ -739,6 +868,26 @@ body {
   }
   .contact__btn {
     margin: 60px auto;
+  }
+  .faq-inner {
+    padding: 20px 30px;
+  }
+  .faq-label {
+    padding: 24px 36px 24px 24px;
+  }
+  .faq-label::after {
+    width: 18px;
+    height: 18px;
+    right: 16px;
+  }
+  .faq-checkbox:checked + .faq-label + .faq-accordion {
+    max-height: 224px;
+  }
+  .modal-checkbox:checked ~ [data-modal="trigger"] {
+    bottom: 72px;
+  }
+  .faq-modal__content {
+    overflow-y: auto;
   }
   .u-hidden-sp {
     display: none !important;
