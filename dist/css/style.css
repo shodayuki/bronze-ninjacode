@@ -198,6 +198,10 @@ body {
   text-shadow: 10px 10px 5px #000;
 }
 
+.concept {
+  margin-bottom: 60px;
+}
+
 .concept__cat {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -674,6 +678,31 @@ body {
   }
   .mainContent__inner {
     padding: 60px 24px 0;
+  }
+  .application.mainContent__cat {
+    margin-bottom: 60px;
+  }
+  .application__cat {
+    display: block;
+  }
+  .application__img {
+    width: 100%;
+  }
+  .application__img__bg {
+    height: 500px;
+  }
+  .application__area {
+    width: 100%;
+  }
+  .application__area__inner {
+    padding: 30px 24px;
+    background: #f4f4f4;
+  }
+  .application__area__inner::before {
+    content: none;
+  }
+  .application__area .mainContent__subTitle {
+    text-align: center;
   }
   .u-hidden-sp {
     display: none !important;

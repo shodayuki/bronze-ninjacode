@@ -29,6 +29,8 @@
 }
 
 .concept {
+  margin-bottom: 60px;
+
   &__cat {
     display: flex;
     flex-wrap: wrap;
@@ -79,7 +81,7 @@
     max-width: 1080px;
     margin: auto;
     padding: 120px 0 0;
-    
+
     @include mq(u-sp){
       padding: 60px 24px 0;
     }
@@ -133,6 +135,10 @@
 
 .application.mainContent__cat {
   margin-bottom: 240px;
+
+  @include mq(u-sp){
+    margin-bottom: 60px;
+  }
 }
 
 .application {
@@ -140,10 +146,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+
+    @include mq(u-sp){
+      display: block;
+    }
   }
 
   &__img {
     width: 60%;
+
+    @include mq(u-sp){
+      width: 100%;
+    }
 
     &__bg {
       background-image: url("#{$bgPath}main_02.jpg");
@@ -155,15 +169,28 @@
       overflow-x: hidden;
       position: relative;
       display: inline-block;
+
+      @include mq(u-sp){
+        height: 500px;
+      }
     }
   }
 
   &__area {
     width: 40%;
 
+    @include mq(u-sp){
+      width: 100%;
+    }
+
     &__inner {
       padding-left: 60px;
       position: relative;
+
+      @include mq(u-sp){
+        padding: 30px 24px;
+        background: $colorBackground;
+      }
 
       &::before {
         width: calc(100% + 200px);
@@ -174,11 +201,19 @@
         right: 0;
         bottom: -100px;
         z-index: -1;
+
+        @include mq(u-sp){
+          content: none;
+        }
       }
     }
 
     .mainContent__subTitle {
       text-align: left;
+
+      @include mq(u-sp){
+        text-align: center;
+      }
     }
   }
 
